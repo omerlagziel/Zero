@@ -9,14 +9,9 @@
  */
 
 import React, { Component } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { store } from './store'
 import { Provider } from 'react-redux'
@@ -30,25 +25,14 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Welcome from './features/welcome/Welcome'
 
-type State = {
-  isLoggedIn: boolean,
-};
+const Stack = createNativeStackNavigator();
 
-export default class App extends Component<{}, State> {
-  render() {
-    return (
-      <Provider store={store}>
-        <SafeAreaView>
-          <Welcome title={'Welcome!'} />
-        </SafeAreaView>
-      </Provider>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  mainView: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  }
-});
+export default () => (
+  <Provider store={store}>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Welcome" component={Welcome} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  </Provider>
+);
