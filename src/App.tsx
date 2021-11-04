@@ -28,7 +28,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Welcome from './features/welcome/welcome'
+import Welcome from './features/welcome/Welcome'
 
 type State = {
   isLoggedIn: boolean,

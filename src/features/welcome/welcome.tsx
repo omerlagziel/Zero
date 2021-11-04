@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
+  Image
 } from 'react-native';
 
 import { RootState } from '../../store'
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from './welcomeSlice'
+import { useGetPokemonByNameQuery } from '../../services/pokemon'
 
 type WelcomeProps = {
   title: string
@@ -18,11 +20,13 @@ export default ({ title }: WelcomeProps) => {
 
   dispatch(increment);
   
-  console.log(state);
+  let { data, error, isLoading } = useGetPokemonByNameQuery('pikachu')
   return (
     <View>
         <Text>{title}</Text>
-        <Text>{state.value}</Text>
+        <Text>{data?.name}</Text>
+        <Image source={{uri: data?.sprites.front_default || ''}}
+          style={{ height: 250, width: 250 }} />
     </View>
   );
 }
