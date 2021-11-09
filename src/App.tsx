@@ -1,37 +1,28 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React, { Component } from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { store } from './store'
 import { Provider } from 'react-redux'
+import { store } from './store'
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 import Welcome from './features/welcome/Welcome'
+import Signup from './features/signup/Signup'
 
-const Stack = createNativeStackNavigator();
+// Parameters for each screen
+export type RootStackParamList = {
+  Welcome: undefined
+  Signup: undefined
+};
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
+// Base of app
 export default () => (
   <Provider store={store}>
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+        <Stack.Screen name="Signup" component={Signup} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   </Provider>
