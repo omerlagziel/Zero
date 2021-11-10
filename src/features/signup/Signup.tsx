@@ -12,6 +12,7 @@ import { displayName as appDisplayName } from '../../../app.json';
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../store'
 import { setEmail, setFullName, setPassword, setIsLoading } from './slice'
+import { useSignupMutation } from '../../services/api'
 
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App'
@@ -53,7 +54,7 @@ export default ({ navigation }: Props) => {
 
     <Button
         label="Sign up"
-        onPress={() => dispatch(trySignUp())}
+        onPress={() => dispatch(useSignupMutation({ email: state.email, fullName: state.fullName, password: state.password }))}
         style={styles.signupButton}
         type={'callForAction'}
       />

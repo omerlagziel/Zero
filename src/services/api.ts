@@ -11,12 +11,13 @@ export interface UserResponse {
 }
 
 export interface LoginRequest {
-  username: string
+  email: string
   password: string
 }
 
 export interface SignupRequest {
-  username: string
+  email: string
+  fullName: string
   password: string
 }
 
@@ -31,7 +32,14 @@ export const api = createApi({
         body: credentials
       }),
     }),
+    signup: builder.mutation<UserResponse, SignupRequest>({
+      query: (credentials) => ({
+        url: `signup`,
+        method: 'POST', 
+        body: credentials
+      }),
+    }),
   }),
 })
 
-export const { useLoginMutation } = api
+export const { useLoginMutation, useSignupMutation } = api

@@ -1,4 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
+import type { User } from '../../services/api'
+
+type AuthState = {
+  user: User | null
+  token: string | null
+}
 
 export const slice = createSlice({
   name: 'welcome',

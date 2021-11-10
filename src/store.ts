@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
-import { pokemonApi } from './services/pokemon'
+import { api } from './services/api'
 
 import welcomeReducer from './features/welcome/slice'
 import signupReducer from './features/signup/slice'
@@ -12,12 +12,12 @@ export const store = configureStore({
       signup: signupReducer,
 
       // Add the generated reducer as a specific top-level slice
-      [pokemonApi.reducerPath]: pokemonApi.reducer,
+      [api.reducerPath]: api.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(pokemonApi.middleware),
+    getDefaultMiddleware().concat(api.middleware),
 })
 
 setupListeners(store.dispatch)
