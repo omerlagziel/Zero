@@ -10,24 +10,22 @@ import {
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Provider } from 'react-redux'
 
-// Parameters for each screen
-export type RootStackParamList = {
-  Welcome: undefined
-}
+import { store } from './store'
+import { RootStackParamList } from './navigation'
+import Menu from './features/menu/Menu'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
 export function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Welcome">
-        <Stack.Screen
-          name="Welcome"
-          component={() => <Text>Test</Text>}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Menu">
+          <Stack.Screen name="Menu" component={Menu} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   )
 }
