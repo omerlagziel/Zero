@@ -34,6 +34,7 @@ local.properties
 #
 node_modules/
 npm-debug.log
+yarn-debug.log
 yarn-error.log
 
 # BUCK
@@ -58,3 +59,9 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# Etc
+*.tsbuildinfo
+.history
+.jest
+.next

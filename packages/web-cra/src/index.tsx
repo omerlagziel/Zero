@@ -2,7 +2,7 @@ import { AppRegistry } from 'react-native'
 
 import { App } from 'components/src/App'
 
-AppRegistry.registerComponent('myprojectname', () => App)
-AppRegistry.runApplication('myprojectname', {
+AppRegistry.registerComponent('zero', () => App)
+AppRegistry.runApplication('zero', {
   rootTag: document.getElementById('root'),
 })
