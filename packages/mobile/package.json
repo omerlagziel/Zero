@@ -1,54 +1,40 @@
 {
-  "name": "@zero/mobile",
+  "name": "mobile",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "android": "concurrently \"yarn start\" \"react-native run-android --no-packager\"",
+    "ios": "concurrently \"yarn start\" \"react-native run-ios --no-packager\"",
+    "lint": "eslint .",
     "start": "react-native start",
+    "studio": "studio android",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "xcode": "xed ios"
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
-    "@reduxjs/toolkit": "^1.6.2",
-    "react": "17.0.2",
-    "react-native": "0.66.1",
-    "react-native-infinite-scroll-view": "^0.4.5",
+    "components": "0.0.1",
+    "react": "17.0.1",
+    "react-native": "0.63.3",
     "react-native-safe-area-context": "^3.3.2",
-    "react-native-screens": "^3.9.0",
-    "react-native-vector-icons": "^9.0.0",
-    "react-redux": "^7.2.6"
+    "react-native-screens": "^3.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/runtime": "^7.12.5",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "@types/jest": "^26.0.23",
-    "@types/react-native": "^0.65.0",
-    "@types/react-test-renderer": "^17.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.3.0",
-    "@typescript-eslint/parser": "^5.3.0",
-    "babel-jest": "^26.6.3",
-    "eslint": "^7.32.0",
-    "jest": "^26.6.3",
-    "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.2",
-    "typescript": "^3.8.3"
-  },
-  "resolutions": {
-    "@types/react": "^17"
+    "@testing-library/jest-native": "3.4.3",
+    "@testing-library/react-native": "7.1.0",
+    "@types/react": "17.0.0",
+    "@types/react-native": "0.63.36",
+    "concurrently": "5.3.0",
+    "eslint": "7.14.0",
+    "metro-react-native-babel-preset": "0.64.0",
+    "react-test-renderer": "17.0.1",
+    "typescript": "4.1.2"
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
     ]
   }
 }

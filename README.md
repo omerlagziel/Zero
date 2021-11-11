@@ -1,16 +1,45 @@
-# Zero
+# React Native [Web] + Monorepo
 
-## Prerequisites
-* (https://nodejs.org/)[Node.js]
-* (https://classic.yarnpkg.com/en/docs/install/)[Yarn]
-* (https://reactnative.dev/docs/environment-setup)[React Native]
-* **Recommended:** VSCode with these extensions: `React Native Tools`, `ESLint`, `Prettier`
+## 100% code sharing between Web, iOS and Android
 
-## Running
-* Open VSCode and hit F5
+This is the source code from [this tutorial](https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej).
 
-## Project tree
-`tsconfig.json` - Indicates that the directory is the root of a TypeScript project. Specifies the root files and the compiler options required to compile the project.
+Tech Stack: TypeScript v4, React Native v0.63, Next.js v10 & Create React App v4.
+Prettier and ESLint are also configured as pre-commit hooks.
 
-## Resources
-* Project was initialized using `npx react-native init MyApp --template react-native-template-typescript` and modified according to this tutorial on (https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej)[code sharing between mobile and web].
+![article-cover](https://user-images.githubusercontent.com/619186/64933790-1fc27680-d81d-11e9-8077-64a1066b7c17.png)
+
+### How to run
+
+- `$ git clone git@github.com:brunolemos/react-native-web-monorepo.git`
+- `$ cd react-native-web-monorepo`
+- `$ yarn`
+- Web
+  - [CRA] `$ yarn workspace web-cra start`
+  - [Next.js] `$ yarn workspace web-nextjs dev`
+- Mobile
+  - [iOS]
+    - `$ cd packages/mobile/ios && pod update && pod install && cd -`
+    - [CLI]
+      - `$ yarn ios`
+    - [Xcode]
+      - `$ yarn workspace mobile start`
+      - `yarn xcode`
+      - Press the Run button
+  - [Android]
+    - [CLI]
+      - `$ yarn android`
+    - [Android Studio]
+      - `$ yarn workspace mobile start`
+      - `yarn studio`
+      - Press the Run button
+
+## Who is using this on production
+
+Check out [DevHub](https://github.com/devhubapp/devhub), which is the project that inspired this repository.
+
+### Author
+
+Follow me on Twitter: [@brunolemos](https://twitter.com/brunolemos)<br/>
+
+<a href="https://twitter.com/brunolemos" target="_blank"><img src="https://github.com/brunolemos.png?size=500" height="100" /></a>
