@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 // import { Button } from '../../components/'
 import { RootState } from '../../store'
 import { decrement, increment } from './slice'
-import { RootStackParamList } from '../../navigation'
+import { RootStackParamList } from '../../navigation/navigation'
 
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Menu'>
@@ -21,9 +21,19 @@ export default ({ navigation }: Props) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => 0}>
-        <Text>I Already have an account</Text>
-      </TouchableOpacity>
+      <Image
+        style={styles.bannerImage}
+        source={{
+          uri:
+            'https://image.freepik.com/free-photo/chinese-food-vegan-stir-fry-noodles-with-red-cabbage-carrot-bowl-black-wooden-background-asian-cuisine-meal-banner-top-view_2829-8181.jpg',
+        }}
+      />
+      <View style={styles.card}>
+        <Text style={styles.title}>Chicken sandwich</Text>
+      </View>
+      <View style={styles.card}>
+        <Text>test</Text>
+      </View>
     </View>
   )
 }
@@ -32,8 +42,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    padding: 20,
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    // justifyContent: 'space-between',
+    // alignItems: 'center',
+    // flexDirection: 'column',
+  },
+  card: {
+    backgroundColor: 'white',
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 20,
+  },
+  bannerImage: {
+    height: 140,
   },
 })
