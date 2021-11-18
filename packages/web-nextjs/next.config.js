@@ -5,6 +5,7 @@ const withTM = require('next-transpile-modules')(['components'], {
 })
 
 module.exports = withTM({
+  target: 'serverless',
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
