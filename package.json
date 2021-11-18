@@ -13,8 +13,9 @@
     "ios": "yarn workspace mobile ios",
     "lint": "eslint .",
     "studio": "yarn workspace mobile studio",
-    "test": "yarn workspaces run test",
-    "xcode": "yarn workspace mobile xcode"
+    "test": "yarn workspace run test",
+    "xcode": "yarn workspace mobile xcode",
+    "api": "yarn workspace api start"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "2.0.0",

@@ -21,18 +21,31 @@ export default ({ navigation }: Props) => {
 
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.bannerImage}
-        source={{
-          uri:
-            'https://image.freepik.com/free-photo/chinese-food-vegan-stir-fry-noodles-with-red-cabbage-carrot-bowl-black-wooden-background-asian-cuisine-meal-banner-top-view_2829-8181.jpg',
-        }}
-      />
       <View style={styles.card}>
-        <Text style={styles.title}>Chicken sandwich</Text>
+        <View style={styles.cardHeader}>
+          <View style={styles.tags}>
+            <View>
+              <Text style={styles.tag}>טבעוני</Text>
+            </View>
+            <View>
+              <Text style={[styles.tag, styles.tagBrown]}>ללא גלוטן</Text>
+            </View>
+          </View>
+          <Text style={styles.title}>סלט פרנק</Text>
+        </View>
+        <Text style={styles.description}>סלט הבית עם רוטב אלף האיים</Text>
       </View>
+
       <View style={styles.card}>
-        <Text>test</Text>
+        <View style={styles.cardHeader}>
+          <View style={styles.tags}>
+            <View>
+              <Text style={[styles.tag, styles.tagBrown]}>ללא גלוטן</Text>
+            </View>
+          </View>
+          <Text style={styles.title}>פסטה רוזריה</Text>
+        </View>
+        <Text style={styles.description}>פסטה ברוטב פטריות וגבינת מוצרלה</Text>
       </View>
     </View>
   )
@@ -51,10 +64,37 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
   },
+  cardHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   title: {
     fontSize: 20,
+    marginBottom: 7,
   },
   bannerImage: {
     height: 140,
   },
+  tags: {
+    flexDirection: 'row-reverse',
+    direction: 'rtl',
+    // marginBottom: 4,
+  },
+  tag: {
+    borderWidth: 1,
+    borderRadius: 50,
+    paddingVertical: 2,
+    paddingHorizontal: 6,
+    textAlign: 'center',
+    color: 'green',
+    borderColor: 'green',
+    fontSize: 12,
+    marginHorizontal: 2,
+  },
+  tagBrown: {
+    color: '#6C3512',
+    borderColor: '#6C3512',
+  },
+  description: {},
 })
