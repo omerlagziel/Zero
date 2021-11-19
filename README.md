@@ -1,18 +1,7 @@
-# React Native [Web] + Monorepo
-
-## 100% code sharing between Web, iOS and Android
-
-This is the source code from [this tutorial](https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej).
-
-Tech Stack: TypeScript v4, React Native v0.63, Next.js v10 & Create React App v4.
-Prettier and ESLint are also configured as pre-commit hooks.
-
-![article-cover](https://user-images.githubusercontent.com/619186/64933790-1fc27680-d81d-11e9-8077-64a1066b7c17.png)
+# Zero
 
 ### How to run
 
-- `$ git clone git@github.com:brunolemos/react-native-web-monorepo.git`
-- `$ cd react-native-web-monorepo`
 - `$ yarn`
 - Web
   - [CRA] `$ yarn workspace web-cra start`
@@ -34,12 +23,13 @@ Prettier and ESLint are also configured as pre-commit hooks.
       - `yarn studio`
       - Press the Run button
 
-## Who is using this on production
+# Project structure
 
-Check out [DevHub](https://github.com/devhubapp/devhub), which is the project that inspired this repository.
+This project is a monorepo project - all parts of the app (web client, app and API) are in a single repository. For more information on how this project was initialized see [this article](https://dev.to/brunolemos/tutorial-100-code-sharing-between-ios-android--web-using-react-native-web-andmonorepo-4pej) or [this repository](https://github.com/brunolemos/react-native-web-monorepo).
 
-### Author
+## Resources
 
-Follow me on Twitter: [@brunolemos](https://twitter.com/brunolemos)<br/>
-
-<a href="https://twitter.com/brunolemos" target="_blank"><img src="https://github.com/brunolemos.png?size=500" height="100" /></a>
+- [NextJS and server side rendering](https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering)
+- [NextJS and client side rendering](https://nextjs.org/docs/basic-features/data-fetching#fetching-data-on-the-client-side)
+- [What is GraphQL and why is it better than a Rest API?](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)
+- [On NextJS Routing and AWS deployment](https://milli.is/blog/why-we-self-host-our-serverless-next-js-site-on-aws-with-terraform)
