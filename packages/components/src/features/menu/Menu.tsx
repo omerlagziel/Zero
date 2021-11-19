@@ -12,6 +12,14 @@ type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Menu'>
 }
 
+const Tag = ({ props }) => {
+  return (
+    <View style={[styles.tag, styles.tagBrown]}>
+      <Text>ללא גלוטן</Text>
+    </View>
+  )
+}
+
 export default ({ navigation }: Props) => {
   const state = useSelector((rootState: RootState) => rootState.menu)
   const dispatch = useDispatch()
@@ -25,10 +33,7 @@ export default ({ navigation }: Props) => {
         <View style={styles.cardHeader}>
           <View style={styles.tags}>
             <View>
-              <Text style={styles.tag}>טבעוני</Text>
-            </View>
-            <View>
-              <Text style={[styles.tag, styles.tagBrown]}>ללא גלוטן</Text>
+              <Text style={styles.tag}>לל</Text>
             </View>
           </View>
           <Text style={styles.title}>סלט פרנק</Text>
@@ -83,7 +88,7 @@ const styles = StyleSheet.create({
   },
   tag: {
     borderWidth: 1,
-    borderRadius: 50,
+    borderRadius: 10,
     paddingVertical: 2,
     paddingHorizontal: 6,
     textAlign: 'center',
@@ -91,6 +96,7 @@ const styles = StyleSheet.create({
     borderColor: 'green',
     fontSize: 12,
     marginHorizontal: 2,
+    backgroundColor: 'blue',
   },
   tagBrown: {
     color: '#6C3512',
