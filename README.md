@@ -33,3 +33,4 @@ This project is a monorepo project - all parts of the app (web client, app and A
 - [NextJS and client side rendering](https://nextjs.org/docs/basic-features/data-fetching#fetching-data-on-the-client-side)
 - [What is GraphQL and why is it better than a Rest API?](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)
 - [On NextJS Routing and AWS deployment](https://milli.is/blog/why-we-self-host-our-serverless-next-js-site-on-aws-with-terraform)
+- [Serverless - AWS or Vercel? ](https://serverlesshandbook.dev/serverless-flavors/)
