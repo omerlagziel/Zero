@@ -8,7 +8,11 @@
     "now-build": "next build"
   },
   "dependencies": {
+    "apollo-server-micro": "^3.5.0",
     "components": "0.0.1",
+    "graphql": "^16.0.1",
+    "micro": "^9.3.4",
+    "micro-cors": "^0.1.1",
     "next": "10.0.2",
     "next-transpile-modules": "4.1.0",
     "react": "17.0.1",
