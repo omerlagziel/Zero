@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 
 // import { Button } from '../../components/'
 import { RootState } from '../../store'
@@ -10,7 +10,7 @@ import { RootStackParamList } from '../../navigation/navigation'
 import { Tag } from '../../components'
 
 type Props = {
-  navigation: NativeStackNavigationProp<RootStackParamList, 'Menu'>
+  navigation: BottomTabNavigationProp<RootStackParamList, 'Menu'>
 }
 
 /**

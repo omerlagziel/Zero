@@ -2,4 +2,5 @@
 export type RootStackParamList = {
   Menu: undefined
   Reviews: undefined
+  Review: undefined
 }
