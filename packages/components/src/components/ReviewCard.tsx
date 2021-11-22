@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   GestureResponderEvent,
 } from 'react-native'
-import { Stars } from '.'
+import { Stars } from './Stars'
 
 const cardHeaderHeight = 50
 
