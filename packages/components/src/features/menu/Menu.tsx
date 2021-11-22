@@ -12,10 +12,15 @@ type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Menu'>
 }
 
-const Tag = ({ props }) => {
+type TagProps = {
+  children: React.ReactNode
+}
+
+const Tag = (props: TagProps) => {
+  const { children } = props
   return (
     <View style={[styles.tag, styles.tagBrown]}>
-      <Text>ללא גלוטן</Text>
+      <Text>{children}</Text>
     </View>
   )
 }
@@ -32,9 +37,7 @@ export default ({ navigation }: Props) => {
       <View style={styles.card}>
         <View style={styles.cardHeader}>
           <View style={styles.tags}>
-            <View>
-              <Text style={styles.tag}>לל</Text>
-            </View>
+            <Tag>Vegan</Tag>
           </View>
           <Text style={styles.title}>סלט פרנק</Text>
         </View>
@@ -44,9 +47,7 @@ export default ({ navigation }: Props) => {
       <View style={styles.card}>
         <View style={styles.cardHeader}>
           <View style={styles.tags}>
-            <View>
-              <Text style={[styles.tag, styles.tagBrown]}>ללא גלוטן</Text>
-            </View>
+            <Tag>Vegan</Tag>
           </View>
           <Text style={styles.title}>פסטה רוזריה</Text>
         </View>
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
     borderColor: 'green',
     fontSize: 12,
     marginHorizontal: 2,
-    backgroundColor: 'blue',
   },
   tagBrown: {
     color: '#6C3512',
