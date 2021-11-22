@@ -7,24 +7,15 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { RootState } from '../../store'
 import { decrement, increment } from './slice'
 import { RootStackParamList } from '../../navigation/navigation'
+import { Tag } from '../../components'
 
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList, 'Menu'>
 }
 
-type TagProps = {
-  children: React.ReactNode
-}
-
-const Tag = (props: TagProps) => {
-  const { children } = props
-  return (
-    <View style={[styles.tag, styles.tagBrown]}>
-      <Text>{children}</Text>
-    </View>
-  )
-}
-
+/**
+ * @param props {@link Props}
+ */
 export default ({ navigation }: Props) => {
   const state = useSelector((rootState: RootState) => rootState.menu)
   const dispatch = useDispatch()
@@ -86,21 +77,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row-reverse',
     direction: 'rtl',
     // marginBottom: 4,
-  },
-  tag: {
-    borderWidth: 1,
-    borderRadius: 10,
-    paddingVertical: 2,
-    paddingHorizontal: 6,
-    textAlign: 'center',
-    color: 'green',
-    borderColor: 'green',
-    fontSize: 12,
-    marginHorizontal: 2,
-  },
-  tagBrown: {
-    color: '#6C3512',
-    borderColor: '#6C3512',
   },
   description: {},
 })

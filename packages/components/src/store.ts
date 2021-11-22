@@ -3,10 +3,12 @@ import { setupListeners } from '@reduxjs/toolkit/query'
 
 // import { api } from './services/api'
 import menu from './features/menu/slice'
+import reviews from './features/reviews/slice'
 
 export const store = configureStore({
   reducer: {
     menu,
+    reviews,
     // signup: signupReducer,
 
     // Add the generated reducer as a specific top-level slice
