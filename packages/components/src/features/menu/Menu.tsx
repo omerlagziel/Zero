@@ -10,13 +10,13 @@ import { RootStackParamList } from '../../navigation/navigation'
 import { Tag } from '../../components'
 
 type Props = {
-  navigation: BottomTabNavigationProp<RootStackParamList, 'Menu'>
+  // navigation: BottomTabNavigationProp<RootStackParamList, 'Menu'>
 }
 
 /**
  * @param props {@link Props}
  */
-export default ({ navigation }: Props) => {
+export default (props: Props) => {
   const state = useSelector((rootState: RootState) => rootState.menu)
   const dispatch = useDispatch()
 
