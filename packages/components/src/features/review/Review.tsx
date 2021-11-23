@@ -17,10 +17,10 @@ import { RootStackParamList } from '../../navigation/navigation'
 import { ReviewCard } from '../../components'
 
 type Props = {
-  navigation: BottomTabNavigationProp<RootStackParamList, 'Review'>
+  navigation?: BottomTabNavigationProp<RootStackParamList, 'Review'> | undefined
 }
 
-export default ({ navigation }: Props) => {
+const Review = ({ navigation }: Props) => {
   // return (
   //   <View style={{ flex: 1 }}>
   //     <View style={{ backgroundColor: 'blue', flex: 1 }}>
@@ -30,7 +30,7 @@ export default ({ navigation }: Props) => {
   //   </View>
   // )
   return (
-    <KeyboardAwareScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <View style={styles.reviewContainer}>
         <ScrollView>
           <ReviewCard
@@ -72,7 +72,7 @@ export default ({ navigation }: Props) => {
         </View>
       </View>
       <TextInput placeholder="Reply.." style={styles.textInput} multiline />
-    </KeyboardAwareScrollView>
+    </View>
   )
 }
 
@@ -126,3 +126,5 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
 })
+
+export default Review

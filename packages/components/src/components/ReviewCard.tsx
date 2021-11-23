@@ -3,11 +3,12 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   TouchableOpacity,
   GestureResponderEvent,
 } from 'react-native'
 import { Stars } from './Stars'
+import Image from './Image'
+import facebookPic from '../../../web-nextjs/public/facebook.png'
 
 const cardHeaderHeight = 50
 
@@ -40,10 +41,7 @@ export const ReviewCard = ({
             }}
             style={styles.profilePic}
           />
-          <Image
-            source={require('../../assets/facebook.png')}
-            style={styles.socialIcon}
-          />
+          <Image source={facebookPic} style={styles.socialIcon} />
         </View>
       </View>
       <View style={styles.altSideContainer}>

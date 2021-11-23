@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   tags: {
     flexDirection: 'row-reverse',
-    direction: 'rtl',
+    // direction: 'rtl',
     // marginBottom: 4,
   },
   description: {},

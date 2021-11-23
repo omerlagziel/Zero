@@ -5,7 +5,6 @@ const withTM = require('next-transpile-modules')(['components'], {
 })
 
 module.exports = withTM({
-  target: 'serverless',
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
@@ -18,5 +17,9 @@ module.exports = withTM({
       ...config.resolve.extensions,
     ]
     return config
+  },
+  images: {
+    domains: ['assets.vercel.com', 'www.personality-insights.com'],
+    formats: ['image/avif', 'image/webp'],
   },
 })
