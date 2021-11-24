@@ -5,6 +5,7 @@ const withTM = require('next-transpile-modules')(['components'], {
 })
 
 module.exports = withTM({
+  future: { webpack5: true },
   webpack(config) {
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
