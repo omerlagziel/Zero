@@ -5,6 +5,7 @@
 - Web is currently not working properly, it is a WIP.
 
 ### Demo
+(Video quality isn't great, background is grey so elements are more noticeable in the actual app)
 https://user-images.githubusercontent.com/85931793/143226625-d0e38239-c249-426e-a5e3-e841f870f9dd.mov
 
 
