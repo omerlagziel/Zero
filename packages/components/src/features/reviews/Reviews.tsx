@@ -14,19 +14,20 @@ import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs'
 import { RootState } from '../../store'
 import { decrement, increment } from './slice'
 import { RootStackParamList } from '../../navigation/navigation'
-import { ReviewCard } from '../../components'
+import { ReviewCard, Link } from '../../components'
 
 type Props = {
-  navigation: BottomTabNavigationProp<RootStackParamList, 'Reviews'>
+  // navigation: BottomTabNavigationProp<RootStackParamList, 'Reviews'>
 }
 
-export default ({ navigation }: Props) => {
+export default ({}: Props) => {
   return (
-    <ReviewCard
-      title="John Doe"
-      subtitle="2 days ago"
-      description="Food was great as always, highly recommend this place! Will definitely come back soon. Only note is to keep the music a little less loud."
-      onPress={(e: GestureResponderEvent) => navigation.navigate('Review')}
-    />
+    <Link href={'/review'}>
+      <ReviewCard
+        title="John Doe"
+        subtitle="2 days ago"
+        description="Food was great as always, highly recommend this place! Will definitely come back soon. Only note is to keep the music a little less loud."
+      />
+    </Link>
   )
 }

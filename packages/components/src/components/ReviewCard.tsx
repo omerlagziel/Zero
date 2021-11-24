@@ -16,7 +16,6 @@ type Props = {
   title: string
   subtitle: string
   description: string
-  onPress?: (event: GestureResponderEvent) => void | undefined
   fullscreen?: boolean
 }
 
@@ -27,10 +26,9 @@ export const ReviewCard = ({
   title,
   subtitle,
   description,
-  onPress,
   fullscreen,
 }: Props) => {
-  const reviewCard = (
+  return (
     <View style={styles.card}>
       <View>
         <View style={styles.profilePicContainer}>
@@ -62,16 +60,9 @@ export const ReviewCard = ({
       </View>
     </View>
   )
-
-  if (onPress === undefined) {
-    return reviewCard
-  }
-
-  return <TouchableOpacity onPress={onPress}>{reviewCard}</TouchableOpacity>
 }
 
 ReviewCard.defaultProps = {
-  onPress: undefined,
   fullscreen: false,
 }
 

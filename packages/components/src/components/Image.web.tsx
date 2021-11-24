@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// eslint-disable-next-line import/no-extraneous-dependencies
 import {
   View,
   StyleSheet,

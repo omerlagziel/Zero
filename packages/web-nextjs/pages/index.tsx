@@ -1,3 +1,3 @@
-import { App } from 'components/src/App'
+import Reviews from 'components/src/features/reviews/Reviews'
 
-export default App
+export default Reviews
