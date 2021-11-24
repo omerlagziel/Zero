@@ -7,12 +7,12 @@ import { store } from './store'
 // import { RootStackParamList } from './navigation/navigation'
 // import Menu from './features/menu/Menu'
 // import Reviews from './features/reviews/Reviews'
-import Review from './features/review/Review'
+import Reviews from './features/reviews/Reviews'
 
 export function App() {
   return (
     <Provider store={store}>
-      <Review />
+      <Reviews />
     </Provider>
   )
 }

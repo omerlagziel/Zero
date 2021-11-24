@@ -13,36 +13,36 @@ import Review from './features/review/Review'
 
 const TabStack = createBottomTabNavigator<RootStackParamList>()
 
-const Tabs = () => (
-  <TabStack.Navigator initialRouteName="Menu">
-    <TabStack.Group>
-      <TabStack.Screen
-        name="Reviews"
-        component={Reviews}
-        options={{
-          // headerTransparent: true,
-          headerTitleAlign: 'center',
-          tabBarBadge: 1,
-        }}
-      />
-      <TabStack.Screen
-        name="Menu"
-        component={Menu}
-        options={{
-          // headerTransparent: true,
-          headerTitleAlign: 'center',
-        }}
-      />
-    </TabStack.Group>
-  </TabStack.Navigator>
-)
+// const Tabs = () => (
+//   <TabStack.Navigator initialRouteName="Menu">
+//     <TabStack.Group>
+//       <TabStack.Screen
+//         name="Reviews"
+//         component={Reviews}
+//         options={{
+//           // headerTransparent: true,
+//           headerTitleAlign: 'center',
+//           tabBarBadge: 1,
+//         }}
+//       />
+//       <TabStack.Screen
+//         name="Menu"
+//         component={Menu}
+//         options={{
+//           // headerTransparent: true,
+//           headerTitleAlign: 'center',
+//         }}
+//       />
+//     </TabStack.Group>
+//   </TabStack.Navigator>
+// )
 
-const Stack = createNativeStackNavigator()
+// const Stack = createNativeStackNavigator()
 
 export function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
+      {/* <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
             name="Main"
@@ -51,7 +51,7 @@ export function App() {
           />
           <Stack.Screen name="Review" component={Review} />
         </Stack.Navigator>
-      </NavigationContainer>
+      </NavigationContainer> */}
     </Provider>
   )
 }

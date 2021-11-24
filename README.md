@@ -1,5 +1,11 @@
 # Zero
 
+### Notes
+
+- Web is currently not working properly, it is a WIP.
+
+### Demo
+
 ### How to run
 
 - `$ yarn`
